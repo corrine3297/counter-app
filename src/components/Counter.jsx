@@ -15,6 +15,7 @@ function Counter() {
     }
     else{
       dispatch(incrementByAmount(Number(amount)))
+      setAmount("")
     }
   }
   return (
@@ -27,7 +28,7 @@ function Counter() {
         <button className='btn btn-success ' onClick={()=>dispatch(increment())}>Increment</button>
       </div>
       <div className='mt-3'>
-      <input class="form-control" onChange={e=>setAmount(e.target.value)} type="text" placeholder="Default input"/>
+      <input class="form-control" onChange={e=>setAmount(e.target.value)} value={amount} type="text" placeholder="Default input"/>
       <button type="button" onClick={handleSubmit} class="btn btn-success mt-2">Submit</button>
       </div>
       </div>
